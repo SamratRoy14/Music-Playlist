@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slipknot Playlist</title>
+    <link rel="stylesheet" type="text/css" href="Music_Player.css">
+    <script src="https://kit.fontawesome.com/5f9a2f8f62.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="display-flex">
+        <!-- Music Logo -->
+        <div id="logo" title="Music Studio Logo">
+            <img src="Images/Home_Screen/Music_Player_Logo.jpg" alt="music player logo">
+            <span>
+                <p>Ninja</p>
+                <p>Studio</p>
+            </span>
+        </div>
+        <a href="#hamburger-drop-list" class="no-underline color-white" onclick="history.back()">
+            <div id="hamburger-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </a>
+        <div id="hamburger-drop-list">
+            <p>Favourites</p>
+            <p>Create Playlist</p>
+            <p>Change Theme</p>
+            <p>Notifications</p>
+            <p>Profile</p>
+        </div>
+        <!-- Favourites Button -->
+        <div class="mt-50">
+            <a href="#add-favourite" class="no-underline color-white" onclick="history.back()">Favourites</a>
+            <div id="add-favourite" class="hidden-menu">
+                <p>Songs</p>
+                <p>Podcasts</p>
+                <p>See All</p>
+            </div>
+        </div>
+
+        <!-- Create Playlist Button -->
+        <div class="mt-50">
+            <a href="#add-playlist" class="no-underline" onclick="history.back()">
+                <button class="button-color">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Playlist
+                </button>
+            </a>
+            <div id="add-playlist" class="hidden-menu">
+                <p>Add Songs</p>
+                <p>Add Podcasts</p>
+                <p>My Playlist</p>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div id="search-bar" class="margin-top-4">
+            <button class="button-color search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" placeholder="Search..">
+            <button class="button-color voice-icon"><i class="fa-solid fa-microphone"></i></button>
+        </div>
+
+        <!-- Notification Button -->
+        <div class="mt-35">
+            <a href="#notification-menu" onclick="history.back()">
+                <button class="button-color scale-big">
+                    <i class="fa-solid fa-bell"></i>
+
+                </button>
+            </a>
+            <div id="notification-menu" class="hidden-menu">
+                <p>All Messages</p>
+                <p>New Songs</p>
+                <p>New Podcasts</p>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div id="profile_image">
+            <a href="#add-profile" class="no-underline" onclick="history.back()">
+                <img src="Images/Home_Screen/Profile_pic.jpg" alt="profile">
+            </a>
+            <div id="add-profile" class="hidden-menu">
+                <p>Account</p>
+                <p>Profile</p>
+                <p>Settings</p>
+                <p>Socials</p>
+                <p>Log Out</p>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <a id = "queue-small" href="#playlist-queue" class="scale-big no-underline color-white" onclick="history.back()">
+            <button class="button-color">
+                Queue
+                <i class="fa-solid fa-circle-chevron-down" style="color: green;">
+                </i>
+            </button>
+        </a>
+        <!-- About Band Section -->
+        <section id="band-details" class="display-flex">
+            <div>
+                <img src="Images/Home_Screen/Artists/Artist_Slipknot.jfif">
+            </div>
+            <div id="about-band" class="display-flex">
+                <div>
+                    <h4 style="font-size: 2rem;">Slipknot</h4>
+                    <h5>US Band</h5>
+                    <h5>9,970,123 M Monthly Listeners</h5>
+                </div>
+                <div>
+                    <p class="subtext">Slipknot is an American heavy metal band formed in Des Moines, Iowa, in 1995 by
+                        percussionist
+                        Shawn Crahan, drummer Joey Jordison and bassist Paul Gray. After several lineup changes in its
+                        early years, the band settled on nine members for more than a decade: Crahan, Jordison, Gray,
+                        Craig Jones, Mick Thomson, Corey Taylor, Sid Wilson, Chris Fehn, and Jim Root.Slipknot is well
+                        known for its attention-grabbing image, aggressive style of music, and energetic and chaotic
+                        live shows.The band rapidly rose to fame following the release of their eponymous debut
+                        album in 1999. The 2001 follow-up album, Iowa, although darker in tone, made the band more
+                        popular. </p>
+                </div>
+                <div class="band-buttons">
+                    <a href="#playlist-bottom-player" class="no-underline color-white" onclick="history.back()">
+                        <button class="play-button" type="submit">
+                            PLAY ALL
+                        </button>
+                    </a>
+
+                    <a>
+                        <button class="follow-button" type="submit">
+                            FOLLOW
+                        </button>
+                    </a>
+                </div>
+                <div class="track-record">
+                    127 Tracks | 6 Albums
+                </div>
+            </div>
+        </section>
+        <section id="songs-list">
+            <div class="queue-div" class="display-flex flex-wrap mt-35">
+
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/AllOutLife.jpg">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Disasterpiece</p>
+                            <p class="subtext">Iowa</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>118,900,000</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/BirthOfTheCruel.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Left Behind</p>
+                            <p class="subtext">Iowa</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>218,359,895</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Duality.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Duality</p>
+                            <p class="subtext">The Subliminal Verses</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>459,389,981</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Gehanna.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Psycosocial</p>
+                            <p class="subtext">All Hope Is Gone</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>518,126,894</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/LeftBehind.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Birth Of The Cruel</p>
+                            <p class="subtext">Iowa</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>65,985,128</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Prosthetics.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Prosthetics</p>
+                            <p class="subtext">Self Titled Album</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>214,238,053</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/SolwayFirth.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Solway Firth</p>
+                            <p class="subtext">We Are Not Your Kind</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>168,120,982</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/TheColdBlack.jpg">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>The Cold Black</p>
+                            <p class="subtext">All Hope Is Gone</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>318,023,020</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Duality.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Three Nil</p>
+                            <p class="subtext">The Subliminal Verses</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>298,359,895</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/BirthOfTheCruel.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Spiders</p>
+                            <p class="subtext">We Are Not Your Kind</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>498,560,012</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Prosthetics.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Scissors</p>
+                            <p class="subtext">Self Titled Album</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>298,359,895</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Gehanna.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Gehanna</p>
+                            <p class="subtext">All Hope Is Gone</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>268,026,950</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/SolwayFirth.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Nero Forte</p>
+                            <p class="subtext">We Are Not Your Kind</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>28,326,102</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/AllOutLife.jpg">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>All Out Life</p>
+                            <p class="subtext">All Out Life</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>498,102,369</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/BirthOfTheCruel.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Red Flag</p>
+                            <p class="subtext">We Are Not Your Kind</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>98,367,025</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Duality.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Vermilion</p>
+                            <p class="subtext">The Subliminal Verses</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>198,023,981</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex background-blur">
+                    <div class="mt-35 song-play-button">
+                        <button class="button-color">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="width-50">
+                        <img src="Images/Artists_Playlist/Songs/Prosthetics.png">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>sic</p>
+                            <p class="subtext">Self Titled Album</p>
+                        </div>
+                    </div>
+                    <div class="mt-35">
+                        <p>298,359,895</p>
+                    </div>
+                    <div class="mt-35 playlist-button">
+                        <button class="button-color" style="margin-right: 17px;">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </button>
+                        <button class="button-color">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <aside id="playlist-queue" class = "">
+        <div class="queue-div example" class="display-flex flex-wrap aside-heading">
+            <span >
+                <span style="font-size: 35px;">Similar Atists</span>
+                <span id="queue-button">View
+                    <a href="#queue-menu-playlist" onclick="history.back()">
+                        <i class="fa-solid fa-circle-chevron-down" style="margin-left:2px;color: green;">
+                        </i>
+                    </a>
+                    <div id="queue-menu-playlist" class="hidden-menu subtext">
+                        <p>Add Songs</p>
+                        <p>Add To Favourites</p>
+                        <p>Add To Playlist</p>
+                        <p>Clear Queue</p>
+                        <p>Settings</p>
+                    </div>
+                </span>
+            </span>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Artists_Playlist/Similar_Artists/Disturbed.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Disturbed</p>
+                        <p class="subtext">NU Metal</p>
+                    </div>
+                </div>
+                <div>
+                    <a href="#artist-menu" onclick="history.back()">
+                        <button class="scale-big button-color" type="button" href="#">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </button>
+                    </a>
+                    <div id="artist-menu" class="hidden-menu">
+                        <p>Visit Artist</p>
+                        <p>Add To Favourites</p>
+                        <p>Details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Artists_Playlist/Similar_Artists/FooFighters.webp" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Foo Fighters</p>
+                        <p class="subtext">Heavy Rock</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="scale-big button-color" type="button" href="#">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Artists_Playlist/Similar_Artists/MotiolessInWhite.jpeg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Motioless</p>
+                        <p class="subtext">NU Metal</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="scale-big button-color" type="button" href="#">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="recently-played">
+                <h4 class="heading-style mt-50" style="margin-left:-2px ;">Recently Played</h4>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Queue_Images/Disasterpiece.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Disasterpiece</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Songs/AllOutLife.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>All Out Life</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Queue_Images/Enter sandman.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Enter Sandman</p>
+                            <p class="subtext">Metallica</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Queue_Images/Drown.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Drown</p>
+                            <p class="subtext">Swarms</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Queue_Images/TheChapletownRag.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Chapletown Rag</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Songs/Duality.png" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Duality</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Songs/LeftBehind.png" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Left Behind</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Songs/Gehanna.png" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Gehanna</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Songs/SolwayFirth.png" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Solway Firth</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Songs/TheColdBlack.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>The Cold Black</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Similar_Artists/FooFighters.webp" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Pretender</p>
+                            <p class="subtext">Foo Fighters</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Artists_Playlist/Similar_Artists/Disturbed.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Sickness</p>
+                            <p class="subtext">Disturbed</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+     <!-- Bottom player section -->
+     <footer id="playlist-bottom-player">
+        <div class="display-flex">
+            <div class="song-info display-flex">
+                <img src="Images/Home_Screen/Queue_Images/Enter sandman.jpg">
+                <div style="display: inline-block; margin-top: 20px;">
+                    <p>Enter Sandman</p>
+                    <p class="subtext">Metallica</p>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                </div>
+            </div>
+            <div class=" control-buttons">
+                <div class="display-flex">
+                    <button class="button-color scale-big" type="button" href="#" title="Shuffle">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button class="button-color scale-big" type="button" href="#" title="Previous">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    <button class="button-color" type="button" href="#" title="Play"style="transform:scale(2.5) ;">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <button class="button-color scale-big" type="button" href="#" title="Next">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                    <button class="button-color scale-big" type="button" href="#" title="Repeat">
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+                </div>
+                <div class="music-player display-flex">
+                    <div class="subtext" style="margin-top:-5px ;">
+                        0.00
+                    </div>
+                    <div class="music-timer">
+                        <i class="fa-solid fa-circle traveler"></i>
+                    </div>
+                    <div class="subtext" style="margin-top:-5px ;">
+                        4.49
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons scale-big">
+                <button class="button-color" type="button" href="#" title="Lyrics">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </button>
+                <button class="button-color" type="button" href="#" title="Playllist">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+                <button class="button-color" type="button" href="#" title="Device">
+                    <i class="fa-solid fa-computer"></i>
+                </button>
+                <button class="button-color" type="button" href="#" title="Change volume">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
