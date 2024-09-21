@@ -1,0 +1,1743 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin-bottom: 100px;
+    --scale: scale(1.5);
+    --dark-theme: #0f0521;
+    --text-color-white: white;
+    --color-transparent: transparent;
+    --box-shadow-white: 0px 0px 8px -1px white;
+    --text-shadow-light: 2px 3px 5px #b69f9f5c;
+    --transition-0_point_3sec: all 0.3s ease-in-out;
+    --contrast-0-point-5: contrast(0.5);
+    background-color: var(--dark-theme);
+    color: var(--text-color-white);
+}
+
+:root {
+    --border-color-dark: #1f064b;
+    --border-color-light: red;
+    --text-size-large: 18px;
+    --text-size-small: 13px;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+}
+
+/* Animation For Page Loading */
+@keyframes page-load {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transition: var(--transition-0_point_3sec);
+    }
+}
+
+main,
+aside {
+    margin-top: 14%;
+    animation: page-load 0.5s;
+    animation-direction: alternate;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    justify-content: space-around;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0px 3px 8px 2px #191954;
+    background-color: var(--border-color-dark);
+    text-shadow: var(--text-shadow-light);
+}
+
+/* Logo Image */
+#logo {
+    width: 16%;
+}
+
+#logo img {
+    height: 109px;
+    width: 113px;
+    border-radius: 50%;
+    position: relative;
+    left: 0;
+}
+
+#logo span {
+    display: inline-block;
+    position: absolute;
+    margin-top: 27px;
+    margin-left: 8px;
+    font-size: x-large;
+}
+
+#hamburger-icon {
+    display: none;
+}
+
+#hamburger-drop-list {
+    position: fixed;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.button-color {
+    color: var(--text-color-white);
+    background-color: var(--color-transparent);
+    border-color: var(--color-transparent);
+}
+
+/* Favourite-section*/
+.hidden-menu {
+    position: fixed;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    transition: var(--transition-0_point_3sec);
+}
+
+#add-favourite:target {
+    height: 9%;
+    width: 10%;
+    background-color: var(--border-color-dark);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+#add-favourite p:hover {
+    background-color: #cd1dcd;
+}
+
+/* Create Playlist Button */
+#add-playlist:target {
+    height: 9%;
+    width: 10%;
+    background-color: var(--border-color-dark);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+#add-playlist p:hover {
+    background-color: #cd1dcd;
+}
+
+/* Search Bar */
+#search-bar input {
+    height: 47px;
+    width: 450px;
+    border-radius: 28px;
+    background-color: var(--border-color-dark);
+    text-align: left;
+    padding-left: 36px;
+    font-size: 15px;
+    color: var(--text-color-white);
+}
+
+.search-icon {
+    position: relative;
+    left: 31px;
+    top: -2px;
+    transform: var(--scale);
+}
+
+.voice-icon {
+    position: relative;
+    left: -28px;
+    top: -3px;
+    transform: var(--scale);
+}
+
+/* Notification Button*/
+#notification-menu:target {
+    height: 8%;
+    width: 10%;
+    background-color: var(--border-color-dark);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+#notification-menu p:hover {
+    background-color: #cd1dcd;
+}
+
+/* Profile Photo Section*/
+#profile_image img {
+    border-radius: 50%;
+    margin-top: 15px;
+    height: 69px;
+    width: 69px;
+}
+
+#add-profile:target {
+    height: 17%;
+    right: 1%;
+    display: flex;
+    flex-direction: column;
+    line-height: 24px;
+    width: 12%;
+    background-color: var(--border-color-dark);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+#add-profile p:hover {
+    background-color: #cd1dcd;
+}
+
+main {
+    display: inline-block;
+    width: 70%;
+    text-shadow: var(--text-shadow-light);
+}
+
+/* My Playlist Section */
+#my-playlists img {
+    height: 250px;
+    width: 250px;
+    border: 2px solid white;
+    transition: var(--transition-0_point_3sec);
+}
+
+#my-playlists .heading-style {
+    display: inline-block;
+    margin-right: 35%;
+}
+
+#my-playlists a {
+    display: none;
+}
+
+#my-playlists img:hover {
+    transform: scale(1.3);
+    transition: var(--transition-0_point_3sec);
+}
+
+#my-playlists .display-flex {
+    margin-top: 70px;
+    margin-left: 3%;
+    margin-bottom: 11%;
+    justify-content: space-evenly;
+}
+
+/* Podcast Section */
+#podcasts img {
+    height: 200px;
+    width: 200px;
+    transition: var(--transition-0_point_3sec);
+    box-shadow: var(--box-shadow-white);
+}
+
+#podcasts img:hover {
+    transform: scale(1.3);
+    transition: var(--transition-0_point_3sec);
+}
+
+#podcasts .display-flex {
+    margin-top: 8%;
+    margin-left: 3%;
+    justify-content: space-around;
+    margin-bottom: 11%;
+}
+
+/* Latest Release */
+#latest-release img {
+    height: 100px;
+    width: 100px;
+}
+
+#latest-songs {
+    flex-direction: row;
+}
+
+#latest-songs .display-flex {
+    width: 41%;
+    margin-right: 6%;
+    cursor: pointer;
+    transition: var(--transition-0_point_3sec);
+}
+
+#latest-songs .display-flex:hover {
+    background-color: rgba(40, 15, 84, 0.3);
+    height: 153px;
+    border-radius: 13px;
+    padding: 0 0 6px 19px;
+    transition: var(--transition-0_point_3sec);
+}
+
+.latest-release-menu {
+    display: none;
+}
+
+#play-menu:hover+.latest-release-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    line-height: 31px;
+    z-index: 1;
+    background-color: var(--border-color-dark);
+}
+
+.latest-release-menu p:hover {
+    background-color: #cd1dcd;
+}
+
+/* Top Artists Section */
+#artists img {
+    height: 172px;
+    width: 175px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#artists h4 {
+    margin-bottom: 9vh;
+    margin-top: 9vh;
+}
+
+#artists .display-flex {
+    justify-content: center;
+    margin-bottom: 10vh;
+    margin-left: 6%;
+}
+
+#artists .display-flex div {
+    margin: 1%;
+}
+
+#open-playlist button {
+    display: none;
+    cursor: pointer;
+    transition: var(--transition-0_point_3sec);
+}
+
+.playlist-artist:hover #open-playlist>button {
+    position: absolute;
+    margin: -118px 0 0 83px;
+    transform: scale(3);
+    display: block;
+    transition: var(--transition-0_point_3sec);
+}
+
+.playlist-artist {
+    transition: var(--transition-0_point_3sec);
+}
+
+.playlist-artist:hover {
+    filter: var(--contrast-0-point-5);
+    transition: var(--transition-0_point_3sec);
+}
+
+/* Genres Section */
+#genres>div {
+    background-color: var(--border-color-dark);
+    position: relative;
+    border-radius: 20px;
+    margin-bottom: 5vh;
+    left: 4%;
+    height: 21vh;
+    width: 67vw;
+}
+
+#genres img {
+    height: 82px;
+    width: 74px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-0_point_3sec);
+    filter: var(--contrast-0-point-5);
+}
+
+#genres img:hover {
+    transform: var(--scale);
+    transition: var(--transition-0_point_3sec);
+}
+
+#genre-heading {
+    background: linear-gradient(blue, violet);
+    border-radius: 50%;
+    height: 111px;
+    width: 112px;
+    margin-top: -1.5%;
+}
+
+#genres .display-flex {
+    justify-content: space-evenly;
+    padding-top: 3.5%;
+}
+
+#genre .centered {
+    pointer-events: none;
+}
+
+/* Occational Music */
+
+#occational-music img {
+    height: 210px;
+    width: 271px;
+    cursor: pointer;
+    filter: var(--contrast-0-point-5);
+    transition: var(--transition-0_point_3sec);
+}
+
+#occational-music>div {
+    margin-top: 4%;
+    position: relative;
+    left: 4%;
+}
+
+#occational-music .display-flex {
+    justify-content: space-evenly;
+}
+
+#occational-music .centered {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#occational-music .container:hover {
+    height: 210px;
+    width: 271px;
+    overflow: hidden;
+}
+
+#occational-music .container:hover img {
+    transform: scale(1.2);
+    transition: var(--transition-0_point_3sec);
+}
+
+/* English and Hindi Latest Releases Section */
+
+.Release img {
+    height: 131px;
+    width: 131px;
+    cursor: pointer;
+    transition: var(--transition-0_point_3sec);
+}
+
+.Release .display-flex>div {
+    transition: var(--transition-0_point_3sec);
+}
+
+.Release .centered {
+    text-shadow: 3px 1px 4px #3d0b97;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.Release .display-flex>div:hover .centered {
+    visibility: visible;
+    transition: var(--transition-0_point_3sec);
+}
+
+.Release .display-flex>div:hover {
+    transform: scale(1.2);
+    transition: var(--transition-0_point_3sec);
+}
+
+.Release h4,
+#daily-mixes h4 {
+    margin-top: 6%;
+    margin-bottom: 5%;
+}
+
+.Release .display-flex,
+#daily-mixes .display-flex {
+    left: 4%;
+    position: relative;
+    justify-content: space-around;
+}
+
+/* Daily Mixes */
+
+#daily-mixes img {
+    height: 200px;
+    width: 200px;
+    transition: var(--transition-0_point_3sec);
+}
+
+#daily-mixes .centered {
+    z-index: 1;
+    display: none;
+}
+
+#daily-mixes img:hover {
+    filter: var(--contrast-0-point-5);
+    transition: var(--transition-0_point_3sec);
+    box-shadow: var(--box-shadow-white);
+}
+
+#daily-mixes img:hover+.centered {
+    font-size: 25px;
+    display: inline;
+    pointer-events: none;
+    transition: var(--transition-0_point_3sec);
+}
+
+
+/* Aside section(Queue) */
+aside {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin-top: 27vh;
+    margin-left: 2%;
+    text-shadow: var(--text-shadow-light);
+}
+
+#aside-list {
+    position: fixed;
+    height: 60%;
+    width: inherit;
+    margin-top: 0px;
+    padding-left: 3px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.aside-heading {
+    position: fixed;
+}
+
+aside img {
+    height: 62px;
+    width: 73px;
+    margin-bottom: 5px;
+    box-shadow: var(--box-shadow-white);
+}
+
+aside span {
+    margin-bottom: 2%;
+}
+#queue-button {
+    font-size: 20px;
+    position: relative;
+    color: green;
+    left: 40%;
+}
+
+.queue-div .display-flex {
+    justify-content: space-between;
+    transition: var(--transition-0_point_3sec);
+}
+
+.queue-div .display-flex:hover {
+    background-color: var(--border-color-dark);
+    border-radius: 10px;
+    padding-left: 7px;
+    transition: var(--transition-0_point_3sec);
+}
+
+#queue-menu:target {
+    height: 26%;
+    right: 1%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 18%;
+    background-color: var(--border-color-dark);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+aside button,
+#latest-release button {
+    background-color: transparent;
+    position: relative;
+    right: 10px;
+    top: 39px;
+}
+
+aside button i,
+#latest-release button i {
+    color: white;
+
+}
+
+.song-names {
+    position: relative;
+    bottom: 22px;
+}
+
+.queue-div {
+    position: relative;
+    flex-direction: column;
+}
+
+#queue-menu p:hover {
+    font-size: 25px;
+}
+
+#playlist-queue #queue-menu-playlist:target {
+    height: 26%;
+    right: 1%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 18%;
+    background-color: var(--border-color-dark);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+#playlist-queue #queue-menu-playlist p:hover {
+    font-size: 25px;
+}
+
+
+/* Bootom Player Section */
+
+#bottom-player .display-flex {
+    justify-content: space-between;
+}
+
+#bottom-player img {
+    height: 71px;
+    width: 73px;
+    box-shadow: var(--box-shadow-white);
+}
+#bottom-player {
+    justify-content: space-between;
+    bottom: 0;
+    height: 108px;
+    padding-top: 20px;
+    position: fixed;
+    width: 100%;
+    border-top: 2px solid white;
+    background-color: rgb(24 4 59);
+    z-index: 1;
+    display: none;
+}
+
+#bottom-player:target {
+    display: block;
+}
+
+.song-info {
+    width: 20%;
+    position: relative;
+    left: 25px;
+}
+
+.control-buttons {
+    width: 20%;
+}
+.control-buttons i,.action-buttons i{
+   transition: var(--transition-0_point_3sec);
+}
+.control-buttons i:hover,.action-buttons i:hover{
+   transform: var(--scale);
+   transition: var(--transition-0_point_3sec);
+}
+
+.action-buttons {
+    width: 20%;
+    align-self: center;
+}
+
+.music-player {
+    position: absolute;
+    margin-top: 25px;
+    width: 30%;
+    left: 35%;
+}
+
+.music-timer {
+    height: 6px;
+    width: 370px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.traveler {
+    position: absolute;
+    bottom: 0;
+    transition: all 2s ease-in-out;
+}
+
+#playlist-bottom-player .display-flex {
+    justify-content: space-between;
+}
+
+#playlist-bottom-player img {
+    height: 71px;
+    width: 73px;
+    box-shadow: var(--box-shadow-white);
+}
+#playlist-bottom-player {
+    justify-content: space-between;
+    bottom: 0;
+    height: 108px;
+    padding-top: 20px;
+    position: fixed;
+    width: 100%;
+    border-top: 2px solid white;
+    background-color: rgb(24 4 59);
+    z-index: 1;
+    display: none;
+}
+
+#playlist-bottom-player:target {
+    display: block;
+}
+
+/* CSS for Playlist.html Page*/
+
+/* About Band Section */
+#band-details {
+    background-color: #1a073b;
+    border: 2px solid #533190;
+    position: relative;
+    left: 5%;
+    height: 61vh;
+    width: 65vw;
+    font-family: system-ui;
+}
+
+#band-details img {
+    height: 432px;
+    width: 403px;
+}
+
+#about-band {
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 4%;
+}
+
+#about-band .play-button {
+    background: linear-gradient(to right, #230160, #cd1dcd);
+    height: 35px;
+    width: 136px;
+    cursor: pointer;
+    box-shadow: var(--box-shadow-white);
+    color: var(--text-color-white);
+}
+
+#about-band .follow-button {
+    background: var(--color-transparent);
+    border: var(--color-transparent);
+    position: absolute;
+    height: 35px;
+    width: 136px;
+    cursor: pointer;
+    color: var(--text-color-white);
+}
+
+#about-band p {
+    font-weight: 100;
+    line-height: 21px;
+    text-align: start;
+}
+
+#queue-menu p:hover {
+    font-size: 25px;
+}
+
+#queue-small {
+    display: none;
+}
+
+/* Songs List Section */
+#songs-list img {
+    height: 70px;
+    width: 70px;
+    box-shadow: var(--box-shadow-white);
+    margin: 10px 18px 6px 64px;
+}
+
+#songs-list .queue-div {
+    left: 5%;
+    margin-top: 61px;
+    width: 94%;
+    text-shadow: var(--text-shadow-light);
+}
+
+.background-blur {
+    background-color: rgb(39 13 85 / 44%);
+}
+
+#songs-list .queue-div .display-flex {
+    margin-bottom: 1%;
+}
+
+.song-play-button {
+    position: absolute;
+    left: 28px;
+}
+
+#songs-list .playlist-button {
+    position: relative;
+    right: 50px;
+}
+
+/* Playlist Aside Section */
+#playlist-queue {
+    margin-left: 1%
+}
+
+#playlist-queue .queue-div {
+    position: fixed;
+    height: 68%;
+    width: inherit;
+    padding-left: 3px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#playlist-queue #aside-heading {
+    position: fixed;
+    margin-top: -47px;
+}
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+#playlist-queue img {
+    height: 114px;
+    width: 137px;
+    margin-right: 10px;
+    box-shadow: var(--box-shadow-white);
+}
+
+#playlist-queue #queue-button {
+    left: 20%;
+}
+
+#artist-menu:target {
+    height: 15%;
+    right: 4%;
+    margin-top: -84px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    line-height: 35px;
+    width: 14%;
+    background-color: var(--border-color-dark);
+    transition: var(--transition-0_point_3sec);
+    color: var(--text-color-white);
+    cursor: pointer;
+}
+
+#artist-menu p:hover {
+    background-color: #cd1dcd;
+}
+
+/* Recently Played Section */
+#recently-played img {
+    height: 100px;
+    width: 100px;
+}
+
+
+/* Common Css Classes*/
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.no-underline {
+    text-decoration: None;
+}
+
+.color-white {
+    color: white;
+}
+
+.scale-big {
+    transform: var(--scale);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.heading-style {
+    margin-left: 4%;
+    font-size: 2rem;
+}
+
+.margin-top-4 {
+    margin-top: 4vh;
+}
+
+.margin-left {
+    margin-left: 10%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-10 {
+    width: 10%;
+}
+
+.subtext {
+    font-size: var(--text-size-small);
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Media Queries for Home Screen */
+@media screen and (max-width:1000px) {
+
+    /* Nav */
+    #search-bar input {
+        width: 185px;
+    }
+
+    #logo {
+        transform: scale(0.6);
+    }
+
+    .width-10 {
+        width: 3%;
+    }
+
+    /* My playlist Sction */
+    .heading-style {
+        margin-top: 15%;
+    }
+
+    #my-playlists img {
+        height: 172px;
+        width: 174px;
+    }
+
+    /* Podcast Section */
+    #podcasts img {
+        height: 131px;
+        width: 129px;
+    }
+
+    #podcasts .display-flex {
+        margin-bottom: -8%;
+    }
+
+    /* Latest Release section */
+    #latest-songs .display-flex {
+        width: 50%;
+        margin-right: 0%;
+    }
+
+    /* Top Artists Section */
+    #artists .display-flex {
+        justify-content: space-evenly;
+        margin-left: -3%;
+    }
+
+    /* Genres Section */
+    #genres img {
+        height: 82px;
+        width: 74px;
+        margin: 9px;
+    }
+
+    #genres>div {
+        left: 1%;
+        height: 37vh;
+        width: 66vw;
+    }
+
+    /* Occational Music */
+    #occational-music img {
+        margin: 11px;
+    }
+
+    #occational-music>div {
+        left: 0%;
+    }
+
+    #occational-music .container:hover {
+        transform: scale(1.1);
+        transition: var(--transition-0_point_3sec);
+    }
+
+    /* English and Hindi Latest Releases Section */
+    .Release .display-flex>div {
+        margin: 14px;
+    }
+
+    .Release .display-flex,
+    #daily-mixes .display-flex {
+        width: 90%;
+    }
+
+    /* Daily Mixes */
+    #daily-mixes img {
+        margin: 10px;
+    }
+
+    /* Bottom Player */
+    .song-info {
+        width: 28%;
+    }
+
+    .music-player {
+        width: 43%;
+    }
+
+    .control-buttons {
+        width: 23%;
+    }
+
+    .action-buttons {
+        width: 14%;
+    }
+
+    .music-timer {
+        margin: 0 14px 0 10px;
+    }
+
+    /* Aside Section */
+    #queue-button {
+        left: 28%;
+    }
+
+    aside {
+        display: inline-block;
+        vertical-align: top;
+        width: 28%;
+        margin-top: 27vh;
+        margin-left: 0%;
+        text-shadow: var(--text-shadow-light);
+    }
+}
+
+@media screen and (max-width:850px) {
+
+    /* Nav */
+    #logo {
+        transform: scale(0.5);
+    }
+
+    #logo {
+        position: relative;
+        left: -2%;
+        width: 15%;
+    }
+
+    .width-10 {
+        width: 6%;
+    }
+
+    #add-playlist:target {
+        height: 14%;
+    }
+
+    #notification-menu:target {
+        height: 14%;
+        width: 12%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    /* My playlist Section */
+    #my-playlists img {
+        height: 194px;
+        width: 202px;
+    }
+
+    #my-playlists a {
+        display: inline;
+    }
+
+    /* Latest Release Section */
+    .margin-left {
+        margin-left: 4%;
+    }
+
+    /* Genres */
+    #genres>div {
+        background-color: var(--border-color-dark);
+        position: relative;
+        border-radius: 20px;
+        left: 2%;
+        height: 35vh;
+        width: 95%;
+    }
+
+    #genres img {
+        height: 100px;
+        width: 100px;
+        margin: 0 5px 0 17px;
+    }
+
+    .centered {
+        top: 48%;
+        left: 51%;
+    }
+
+    #genres img:hover {
+        transform: scale(1.3);
+    }
+
+    /* English And hindi Releases Section */
+    .Release .display-flex>div {
+        margin: 0;
+    }
+
+    .Release .display-flex,
+    #daily-mixes .display-flex {
+        width: 100%;
+    }
+
+    .Release .display-flex,
+    #daily-mixes .display-flex {
+        left: 0%;
+    }
+
+    #daily-mixes img {
+        margin: 38px;
+        transform: scale(1.2);
+    }
+
+    /* Bottom Player */
+    .song-info {
+        width: 30%;
+    }
+
+    .music-player {
+        width: 44%;
+    }
+
+    /* Aside */
+    aside span,
+    #aside-list {
+        display: none;
+    }
+
+    #aside-list:target {
+        display: inline-block;
+        visibility: visible;
+        position: fixed;
+        top: 204px;
+        right: 71px;
+        width: 44%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: black;
+        z-index: 12;
+        box-shadow: var(--box-shadow-white);
+        transition: var(--transition-0_point_3sec);
+    }
+
+    .podcast-heading {
+        display: inline;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    /* Navigation Bar */
+    nav div {
+        visibility: hidden;
+    }
+
+    #logo {
+        visibility: visible;
+        transform: scale(0.9);
+        width: 26%;
+    }
+
+    #hamburger-icon {
+        display: inline-block;
+        visibility: visible;
+        position: absolute;
+        top: 47px;
+        left: 92%;
+        transform: scale(1.5);
+    }
+
+    #search-bar {
+        display: inline-block;
+        visibility: visible;
+        margin-top: 2vh;
+    }
+
+    .search-icon {
+        left: 10px;
+        top: 35px;
+    }
+
+    .voice-icon {
+        left: 229px;
+        top: -34px;
+    }
+
+    #search-bar input {
+        width: 256px;
+    }
+
+
+    #hamburger-drop-list:target {
+        visibility: visible;
+        right: 4%;
+        top: 10%;
+        z-index: 10;
+        height: 26%;
+        line-height: 36px;
+        width: 25%;
+        background-color: var(--border-color-dark);
+        color: var(--text-color-white);
+        cursor: pointer;
+        transition: none;
+    }
+
+    #hamburger-drop-list p:hover {
+        background-color: #cd1dcd;
+    }
+
+    /* My Playlist Section */
+    #my-playlists a {
+        display: none;
+    }
+
+    #my-playlists .display-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #my-playlists img {
+        height: 250px;
+        width: 250px;
+        margin-bottom: 32px;
+    }
+
+    #my-playlists img:hover {
+        transform: scale(1.1);
+        transition: var(--transition-0_point_3sec);
+    }
+
+    /* Latest Release */
+    #latest-songs {
+        flex-direction: column;
+    }
+
+    #latest-songs .display-flex {
+        width: 100%;
+    }
+
+    #play-menu:hover+.latest-release-menu {
+        right: 12px;
+    }
+
+    /* Genres section */
+    #genre-heading {
+        height: 111px;
+        width: 180px;
+        border-radius: 0;
+        border-top-left-radius: 13%;
+        margin-top: -3.5%;
+    }
+
+    #genres>div {
+        height: 60vh;
+    }
+
+    #genres img {
+        height: 125px;
+        width: 125px;
+        margin: -16px 5px 19px 17px;
+    }
+
+    #genres img:hover {
+        transform: scale(1.2);
+    }
+
+    /* English And hindi Releases Section */
+    .Release .display-flex>div {
+        margin: 17px;
+    }
+
+    /* Bottom Player */
+    .song-info {
+        width: 34%;
+    }
+
+    .control-buttons {
+        width: 29%;
+    }
+
+    .music-player {
+        width: 51%;
+    }
+
+    .action-buttons {
+        width: 9%;
+    }
+
+    /* Aside */
+    aside #queue-button {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    #aside-list {
+        display: inline-block;
+        visibility: visible;
+        position: absolute;
+        top: 190px;
+        right: 15px;
+        width: 48%;
+        height: 126%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        transition: var(--transition-0_point_3sec);
+    }
+
+    .podcast-heading {
+        visibility: visible;
+    }
+
+    #queue #queue-button {
+        display: inline;
+        top: 206px;
+        left: 78%;
+        width: 35%;
+    }
+
+    #queue-menu:target {
+        width: 28%;
+    }
+}
+
+@media screen and (max-width:550px) {
+
+    /* Nav Bar */
+    #search-bar input {
+        width: 157px;
+    }
+
+    .voice-icon {
+        display: none;
+    }
+
+    #hamburger-icon {
+        left: 94%;
+        transform: scale(1.3);
+    }
+
+    /* My playlist Section */
+    #my-playlists img {
+        height: 240px;
+        width: 253px;
+    }
+
+    #my-playlists .display-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #my-playlists a {
+        display: inline;
+    }
+
+    #my-playlists .heading-style {
+        display: inline-block;
+        margin-right: 7%;
+    }
+
+    /* Podcast section */
+    #podcasts img {
+        height: 162px;
+        width: 173px;
+        margin-bottom: 35px;
+    }
+
+    /* Latest Release */
+    #latest-songs {
+        flex-direction: column;
+    }
+
+    #latest-songs .display-flex {
+        width: 100%;
+    }
+
+    /* Genres */
+    #genres img {
+        height: 125px;
+        width: 125px;
+        margin: 11px 6px 19px 17px;
+    }
+
+    #genres>div {
+        height: 71vh;
+    }
+
+    .jazz-genre {
+        display: none;
+    }
+
+    /* Daily Mixes Section */
+    #daily-mixes img {
+        height: 159px;
+        width: 156px;
+    }
+
+    /* Bottom Player */
+    .song-info {
+        width: 48%;
+        margin-left: -14px;
+    }
+
+    .music-player {
+        margin-left: 10%;
+        width: 54%;
+    }
+
+    .control-buttons {
+        width: 31%;
+        margin-right: 10%;
+    }
+
+    .action-buttons {
+        display: none;
+    }
+
+    /* Aside Section */
+    aside span,
+    #aside-list {
+        visibility: hidden;
+    }
+
+    #queue #queue-button {
+        visibility: hidden;
+    }
+
+    #aside-list:target {
+        display: inline-block;
+        visibility: visible;
+        position: fixed;
+        top: 119px;
+        right: 21px;
+        width: 64%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: black;
+        z-index: 12;
+        box-shadow: var(--box-shadow-white);
+        transition: var(--transition-0_point_3sec);
+    }
+}
+
+
+/* Media Queries for Artists Playlist */
+
+@media screen and (max-width:1100px) {
+
+    #search-bar input {
+        height: 47px;
+        width: 261px;
+    }
+
+    /* About Band Section */
+    #band-details {
+        left: 2%;
+        height: 69vh;
+    }
+
+    #band-details img {
+        height: 380px;
+        width: 350px;
+    }
+
+    .track-record {
+        position: relative;
+        top: -12%;
+    }
+
+    .band-buttons {
+        margin-left: -100%;
+        width: 200%;
+    }
+
+    /* Songs List Section */
+    #songs-list .queue-div {
+        left: 2%;
+    }
+
+    /* Playlist Aside Section */
+    #playlist-queue {
+        margin-left: -1%;
+        width: 30%;
+    }
+
+    #playlist-queue #queue-button {
+        left: 8%;
+    }
+}
+
+@media screen and (max-width:950px) {
+
+    /* About Band Section */
+    #band-details {
+        left: 1%;
+        height: 74vh;
+    }
+
+    .band-buttons {
+        margin-left: -136%;
+        width: 100%;
+    }
+
+    .track-record {
+        position: inherit;
+    }
+
+    .track-record {
+        position: relative;
+        top: -2%;
+    }
+
+    #songs-list .queue-div {
+        left: 1%;
+    }
+
+    /* Playlist Aside Section */
+    #playlist-queue {
+        margin-left: -2%;
+        width: 31%;
+    }
+}
+
+@media screen and (max-width:850px) {
+    main {
+        width: 100%;
+    }
+
+    main,
+    aside {
+        margin-top: 14%;
+    }
+
+    /* About Band Section */
+    #about-band {
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 3%;
+    }
+
+    #band-details {
+        left: 3%;
+        height: 67vh;
+        width: 92vw;
+        margin-top: 70px;
+    }
+
+    #band-details img {
+        height: 473px;
+        width: 405px;
+    }
+
+    .band-buttons {
+        margin-left: 0%;
+        width: 53%;
+    }
+
+    /* Songs List Section */
+    #songs-list .queue-div {
+        left: 3%;
+    }
+
+    /* Aside Section */
+
+    #queue-small {
+        display: inline;
+    }
+
+    #playlist-queue .queue-div {
+        width: 49%;
+    }
+
+    #playlist-queue {
+        display: none;
+    }
+
+    #playlist-queue #queue-button {
+        visibility: hidden;
+    }
+
+    #playlist-queue:target {
+        display: inline-block;
+        visibility: visible;
+        position: fixed;
+        top: 55px;
+        left: 42px;
+        width: 53%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: black;
+        z-index: 12;
+        box-shadow: var(--box-shadow-white);
+        transition: var(--transition-0_point_3sec);
+    }
+
+    #playlist-queue:target span {
+        visibility: visible;
+    }
+
+    #queue-small {
+        position: absolute;
+        left: 5%;
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    /* About Band Section */
+    #band-details img {
+        height: 200px;
+        width: 200px;
+        box-shadow: var(--box-shadow-white);
+    }
+
+    #band-details {
+        margin-top: 90px;
+    }
+
+    #playlist-queue {
+        display: none;
+    }
+
+    #playlist-queue #queue-button {
+        visibility: hidden;
+    }
+
+    #playlist-queue:target {
+        top: 76px;
+        left: 32px;
+        width: 53%;
+        height: 100%;
+    }
+
+    #playlist-queue:target span {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #logo {
+        position: relative;
+        left: 6%;
+        width: 26%;
+    }
+
+    #band-details {
+        height: 72vh;
+        margin-top: 114px;
+    }
+
+    .queue-div .width-50 {
+        width: 61%;
+    }
+
+    .queue-div .mt-35 p {
+        display: none;
+    }
+
+    #queue-small {
+        position: absolute;
+        left: 5%;
+        top: 18%;
+    }
+
+    #playlist-queue .queue-div {
+        width: 67%;
+    }
+
+    #playlist-queue:target {
+        top: 76px;
+        left: 28px;
+        width: 74%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #search-bar input {
+        width: 196px;
+    }
+
+    #band-details {
+        height: 68vh;
+    }
+
+    .band-buttons {
+        margin-left: -41%;
+        width: 12%;
+        position: absolute;
+        top: 51%;
+    }
+
+    #about-band p {
+        line-height: 20px;
+        margin-top: -30px;
+    }
+
+    .track-record {
+        top: -5%;
+    }
+
+    #playlist-queue:target {
+        top: 88px;
+        left: 24px;
+        width: 74%;
+        height: 100%;
+    }
+
+    .queue-div .width-50 {
+        width: 150%;
+    }
+}
