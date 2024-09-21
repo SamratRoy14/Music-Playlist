@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" type="text/css" href="Music_Player.css">
+    <script src="https://kit.fontawesome.com/5f9a2f8f62.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="display-flex">
+        <!-- Music Logo -->
+        <div id="logo" title="Music Studio Logo">
+            <img src="Images/Home_Screen/Music_Player_Logo.jpg" alt="music player logo">
+            <span>
+                <p>Ninja</p>
+                <p>Studio</p>
+            </span>
+        </div>
+        <a href="#hamburger-drop-list" class="no-underline color-white" onclick="history.back()">
+            <div id="hamburger-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </a>
+        <div id="hamburger-drop-list">
+            <p>Favourites</p>
+            <p>Create Playlist</p>
+            <p>Change Theme</p>
+            <p>Notifications</p>
+            <p>Profile</p>
+        </div>
+        <!-- Favourites Button -->
+        <div class="mt-50">
+            <a href="#add-favourite" class="no-underline color-white" onclick="history.back()">Favourites</a>
+            <div id="add-favourite" class="hidden-menu">
+                <p>Songs</p>
+                <p>Podcasts</p>
+                <p>See All</p>
+            </div>
+        </div>
+
+        <!-- Create Playlist Button -->
+        <div class="mt-50">
+            <a href="#add-playlist" class="no-underline" onclick="history.back()">
+                <button class="button-color">
+                    <i class="fa-solid fa-plus"></i>
+                    Create Playlist
+                </button>
+            </a>
+            <div id="add-playlist" class="hidden-menu">
+                <p>Add Songs</p>
+                <p>Add Podcasts</p>
+                <p>My Playlist</p>
+            </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div id="search-bar" class="margin-top-4">
+            <button class="button-color search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" placeholder="Search..">
+            <button class="button-color voice-icon"><i class="fa-solid fa-microphone"></i></button>
+        </div>
+
+        <!-- Notification Button -->
+        <div class="mt-35">
+            <a href="#notification-menu" onclick="history.back()">
+                <button class="button-color scale-big">
+                    <i class="fa-solid fa-bell"></i>
+
+                </button>
+            </a>
+            <div id="notification-menu" class="hidden-menu">
+                <p>All Messages</p>
+                <p>New Songs</p>
+                <p>New Podcasts</p>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div id="profile_image">
+            <a href="#add-profile" class="no-underline" onclick="history.back()">
+                <img src="Images/Home_Screen/Profile_pic.jpg" alt="profile">
+            </a>
+            <div id="add-profile" class="hidden-menu">
+                <p>Account</p>
+                <p>Profile</p>
+                <p>Settings</p>
+                <p>Socials</p>
+                <p>Log Out</p>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- My playlist section -->
+        <section id="my-playlists">
+
+            <h4 class="heading-style">Your Favourite Playlists</h4>
+            <a href="#aside-list" class="scale-big no-underline color-white" onclick="history.back()">
+                <button class="button-color" value="Queue">
+                    Queue
+                    <i class="fa-solid fa-circle-chevron-down" style="color: green;">
+                    </i>
+                </button>
+            </a>
+            <div class="display-flex flex-wrap">
+                <div>
+                    <img src="Images/Home_Screen/My_Playlists/my-playlist_pic1.jfif">
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/My_Playlists/my-playlist_pic2.jpg">
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/My_Playlists/my-playlist_pic3.jfif">
+                </div>
+            </div>
+        </section>
+
+        <!-- Podcast section -->
+        <section id="podcasts">
+            <h4 class="heading-style">Your Favourite Podcasts</h4>
+            <div class="display-flex flex-wrap">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast1.jpg">
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast2.jfif">
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast3.jpg">
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast4.jpg.png">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Latest release section -->
+        <section id="latest-release">
+
+            <h4 class="heading-style">Latest Releases</h4>
+
+            <div id="latest-songs" class="queue-div display-flex flex-wrap margin-left margin-top-4">
+                <div class="display-flex">
+                    <a href="#bottom-player" class="no-underline color-white" onclick="history.back()">
+                        <div>
+                            <img src="Images/Home_Screen/Latest_Releases/Latest_release_1.jpg" class="margin-top-4">
+                            <div class="song-names" style="display: inline-block;">
+                                <p>Metal Health</p>
+                                <p class="subtext">Quiet Riot</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div>
+                        <button id = "play-menu" class="button-color" type="button">
+                            <i class="fa-solid fa-ellipsis"></i>
+                            <p>4:44</p>
+                        </button>
+                        <div class = "latest-release-menu">
+                            <p>
+                                <i class="fa-solid fa-play"></i>
+                                Play
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-list"></i>
+                                Add To Playlists
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-heart"></i>
+                                Add To Favourites
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-info"></i>
+                                Get Info
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Latest_Releases/Latest_release_2.png" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Enter Sandman</p>
+                            <p class="subtext">Metallica</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-solid fa-ellipsis"></i>
+                            <p>4:51</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Latest_Releases/Latest_release_3.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>All Out Life</p>
+                            <p class="subtext">Slipknot</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-solid fa-ellipsis"></i>
+                            <p>5:51</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="display-flex">
+                    <div>
+                        <img src="Images/Home_Screen/Latest_Releases/Latest_release_4.jpg" class="margin-top-4">
+                        <div class="song-names" style="display: inline-block;">
+                            <p>Bohemian Rhapsody</p>
+                            <p class="subtext">Queen</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="button-color" type="button" href="#">
+                            <i class="fa-solid fa-ellipsis"></i>
+                            <p>6.00</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artists section -->
+        <section id="artists" class=" flex-wrap">
+            <h4 class="heading-style">Your Top Artists</h4>
+            <div class="display-flex flex-wrap">
+                <div class="text-center">
+                    <img src="Images/Home_Screen/Artists/Artist_LambOfGod.jpg">
+                    <p>Lamb of God</p>
+                </div>
+                <div class="text-center playlist-artist">
+                    <a id="playlist-link" href="Playlist.html" class="no-underline color-white">
+                        <img src="Images/Home_Screen/Artists/Artist_Slipknot.jfif">
+                        <p>Slipknot</p>
+                        <div id="open-playlist">
+                            <button class="button-color">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </a>
+                </div>
+                <div class="text-center">
+                    <img src="Images/Home_Screen/Artists/Artist_BMTH.jpg">
+                    <p>Bring Me The Horizon</p>
+                </div>
+                <div class="text-center">
+                    <img src="Images/Home_Screen/Artists/Artist_Metallica.jpg">
+                    <p>Mettalica</p>
+                </div>
+                <div class="text-center">
+                    <img src="Images/Home_Screen/Artists/Artist_FIR.jpg">
+                    <p>Falling In Reverse</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Different genres section -->
+        <section id="genres">
+            <div class="display-flex flex-wrap">
+                <div id="genre-heading" class="container">
+                    <div class="centered">Genres</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Rock.jpg">
+                    <div class="centered">Rock</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Metal.jpg">
+                    <div class="centered">Metal</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Pop.jpg">
+                    <div class="centered">Pop</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Indie.jpg">
+                    <div class="centered">Indie</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Classical.jpg">
+                    <div class="centered">Classical</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Folk.jpg">
+                    <div class="centered">Folk</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Country.jpg">
+                    <div class="centered">Country</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Genres/Hiphop.jpg">
+                    <div class="centered">HipHop</div>
+                </div>
+                <div class="container jazz-genre">
+                    <img src="Images/Home_Screen/Genres/Jazz.jpg">
+                    <div class="centered">Jazz</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Occational Music section -->
+        <section id="occational-music">
+            <h4 class="heading-style">Dive In Music With Friends</h4>
+            <div class="display-flex flex-wrap">
+                <div class="container">
+                    <img src="Images/Home_Screen/Occational_Music/EDM_Music.jfif">
+                    <div class="centered">Electronic</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Occational_Music/Party_Music.jfif">
+                    <div class="centered">Party</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Occational_Music/RoadTrip_Music.jpg">
+                    <div class="centered">Roadtrip</div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Latest English releases section -->
+        <section class="Release">
+            <h4 class="heading-style">Latest English Albums</h4>
+            <div class="display-flex flex-wrap">
+                <div>
+                    <div class="container">
+                        <img src="Images/Home_Screen/Latest_English_Albums/EnglishAlbum1.jpg">
+                        <div class="centered">By Mudvayne</div>
+                    </div>
+                    <p>Inhumane</p>
+                    <p class="subtext">JUL 11, 2022</p>
+                </div>
+                <div>
+                    <div class="container">
+                        <img src="Images/Home_Screen/Latest_English_Albums/EnglishAlbum2.jpg">
+                        <div class="centered">By Papa Roach</div>
+                    </div>
+                    <p>The Gray Chapter</p>
+                    <p class="subtext">JUL 08, 2022</p>
+                </div>
+                <div>
+                    <div class="container">
+                        <img src="Images/Home_Screen/Latest_English_Albums/EnglishAlbum3.jpg">
+                        <div class="centered">By Disturbed</div>
+                    </div>
+                    <p>Balance</p>
+                    <p class="subtext">JUL 07, 2022</p>
+                </div>
+                <div>
+                    <div class="container">
+                        <img src="Images/Home_Screen/Latest_English_Albums/EnglishAlbum4.jpg">
+                        <div class="centered">By Cannibal Corpse</div>
+                    </div>
+                    <p>Evisceration Plague</p>
+                    <p class="subtext">JUL 05, 2022</p>
+                </div>
+                <div>
+                    <div class="container">
+                        <img src="Images/Home_Screen/Latest_English_Albums/EnglishAlbum5.jpg">
+                        <div class="centered">By Gojira</div>
+                    </div>
+                    <p>Another Life</p>
+                    <p class="subtext">JUL 12, 2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest English releases section -->
+        <section class="Release">
+            <h4 class="heading-style">Latest Hindi Albums</h4>
+            <div class="display-flex flex-wrap">
+                <div>
+                    <img src="Images/Home_Screen/Latest_Hindi_Albums/HindiAlbum1.png">
+                    <p>Inhumane</p>
+                    <p class="subtext">JUL 01, 2022</p>
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Latest_Hindi_Albums/HindiAlbum2.jpg">
+                    <p>Tere Khamosh</p>
+                    <p class="subtext">JUL 09, 2022</p>
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Latest_Hindi_Albums/HindiAlbum3.png">
+                    <p>Plundered</p>
+                    <p class="subtext">JUL 02, 2022</p>
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Latest_Hindi_Albums/HindiAlbum4.png">
+                    <p>Jaago Jaago Bakre</p>
+                    <p class="subtext">JUL 11, 2022</p>
+                </div>
+                <div>
+                    <img src="Images/Home_Screen/Latest_Hindi_Albums/HindiAlbum5.png">
+                    <p>The Sky Is pink</p>
+                    <p class="subtext">JUL 09, 2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dailymix section -->
+        <section id="daily-mixes">
+            <h4 class="heading-style">Daily Mixes For You</h4>
+            <div class="display-flex flex-wrap">
+                <div class="container">
+                    <img src="Images/Home_Screen/Daily_ Mixes/DailyMix1.png">
+                    <div class="centered">Daily Mixes For You</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Daily_ Mixes/DailyMix2.png">
+                    <div class="centered">Daily Mixes For You</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Daily_ Mixes/DailyMix3.png">
+                    <div class="centered">Daily Mixes For You</div>
+                </div>
+                <div class="container">
+                    <img src="Images/Home_Screen/Daily_ Mixes/DailyMix4.png">
+                    <div class="centered">Daily Mixes For You</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Queue section -->
+    <aside id="queue" class= "aside-heading">
+        <div>
+            <span style="font-size: 35px;">Queue</span>
+            <span id="queue-button">Queue
+                <a href="#queue-menu" onclick="history.back()">
+                    <i class="fa-solid fa-circle-chevron-down" style="margin-left:2px;color: green;">
+                    </i>
+                </a>
+                <div id="queue-menu" class="hidden-menu subtext">
+                    <p>Add Songs</p>
+                    <p>Add To Favourites</p>
+                    <p>Add To Playlist</p>
+                    <p>Clear Queue</p>
+                    <p>Settings</p>
+                </div>
+            </span>
+        </div>
+
+        <div id="aside-list" class="queue-div example" class="display-flex flex-wrap">
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Disasterpiece.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Disasterpiece</p>
+                        <p class="subtext">Slipknot</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Drown.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Drown</p>
+                        <p class="subtext">Bring Me The Horizon</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Enter sandman.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Enter sandman</p>
+                        <p class="subtext">Metallica</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/ItsOver.png" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>It's Over</p>
+                        <p class="subtext">Falling In Reverse</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/LosingMyLife.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Losing My Life</p>
+                        <p class="subtext">Falling In Reverse</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/MasterOfPuppets.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Master Of Puppets</p>
+                        <p class="subtext">Metallica</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Repentless.gif" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Repentless</p>
+                        <p class="subtext">Slayer</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/ShadowMooses.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Shadow Mooses</p>
+                        <p class="subtext">Bring Me The Horizon</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/TheChapletownRag.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>The Chapletown Rag</p>
+                        <p class="subtext">Slipknot</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/WhenEverythingMeansNothing.jpeg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>When it's Gone</p>
+                        <p class="subtext">Fit For A King</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Repentless.gif" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Repentless</p>
+                        <p class="subtext">Slayer</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Enter sandman.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Enter sandman</p>
+                        <p class="subtext">Metallica</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/MasterOfPuppets.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>All Means Nothing</p>
+                        <p class="subtext">Lamb Of God</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/ItsOver.png" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Shadow Mooses</p>
+                        <p class="subtext">Bring Me The Horizon</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Repentless.gif" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Dictator</p>
+                        <p class="subtext">Nothing</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/TheChapletownRag.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Evisceration Plague</p>
+                        <p class="subtext">Cannibal Corpse</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/WhenEverythingMeansNothing.jpeg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Iowa</p>
+                        <p class="subtext">Slipknot</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Disasterpiece.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Sound Of Silence</p>
+                        <p class="subtext">Disturbed</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Drown.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Drown</p>
+                        <p class="subtext">Bring Me The Horizon</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/MasterOfPuppets.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Shadow Mooses</p>
+                        <p class="subtext">Slayer</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/ItsOver.png" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Voices</p>
+                        <p class="subtext">Motionless In White</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Repentless.gif" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Shadow Mooses</p>
+                        <p class="subtext">Bring Me The Horizon</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/Disasterpiece.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Sad But True</p>
+                        <p class="subtext">Metallica</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex" style="margin-bottom: 27px;">
+                <div>
+                    <img src="Images/Home_Screen/Queue_Images/WhenEverythingMeansNothing.jpeg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Everyone But Me </p>
+                        <p class="subtext">Ronnie Radke</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+            <span>
+                <span class="podcast-heading" style="font-size: 30px;">Recent Podcasts</span>
+            </span>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast1.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 123</p>
+                        <p class="subtext">Joe Rogan Show</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast2.jfif" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 13</p>
+                        <p class="subtext">Distractable</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast3.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 23</p>
+                        <p class="subtext">Learn English Podacst</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast4.jpg.png" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 123</p>
+                        <p class="subtext">Joe Rogan Show</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast3.jpg" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 14</p>
+                        <p class="subtext">Distractable</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast2.jfif" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 124</p>
+                        <p class="subtext">Joe Rogan Show</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="display-flex">
+                <div>
+                    <img src="Images/Home_Screen/Podcasts/Podcast4.jpg.png" class="margin-top-4">
+                    <div class="song-names" style="display: inline-block;">
+                        <p>Ep - 24</p>
+                        <p class="subtext">Learn English Podacst</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </aside>
+
+    <!-- Bottom player section -->
+    <footer id="bottom-player">
+        <div class="display-flex">
+            <div class="song-info display-flex">
+                <img src="Images/Home_Screen/Queue_Images/Enter sandman.jpg">
+                <div style="display: inline-block; margin-top: 20px;">
+                    <p>Enter Sandman</p>
+                    <p class="subtext">Metallica</p>
+                </div>
+                <div>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <button class="button-color" type="button" href="#">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                </div>
+            </div>
+            <div class=" control-buttons">
+                <div class="display-flex">
+                    <button class="button-color scale-big" type="button" href="#" title="Shuffle">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button class="button-color scale-big" type="button" href="#" title="Previous">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    <button class="button-color" type="button" href="#" title="Play"style="transform:scale(2.5) ;">
+                        <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <button class="button-color scale-big" type="button" href="#" title="Next">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                    <button class="button-color scale-big" type="button" href="#" title="Repeat">
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+                </div>
+                <div class="music-player display-flex">
+                    <div class="subtext" style="margin-top:-5px ;">
+                        0.00
+                    </div>
+                    <div class="music-timer">
+                        <i class="fa-solid fa-circle traveler"></i>
+                    </div>
+                    <div class="subtext" style="margin-top:-5px ;">
+                        4.49
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons scale-big">
+                <button class="button-color" type="button" href="#" title="Lyrics">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </button>
+                <button class="button-color" type="button" href="#" title="Playllist">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+                <button class="button-color" type="button" href="#" title="Device">
+                    <i class="fa-solid fa-computer"></i>
+                </button>
+                <button class="button-color" type="button" href="#" title="Change volume">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
